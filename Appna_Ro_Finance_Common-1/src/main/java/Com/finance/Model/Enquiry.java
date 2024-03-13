@@ -1,7 +1,9 @@
 package Com.finance.Model;
 
 
-import java.time.LocalDate;
+
+
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -26,8 +28,10 @@ public class Enquiry {
 	private String customerEmail;
 	private long customerContact;
 	private String panCardNo;
+	private String customerAddress;
 	
-	 @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	 private LocalDate currentData;
+	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	
+	 private LocalDateTime currentDateAndTime;
 }
 

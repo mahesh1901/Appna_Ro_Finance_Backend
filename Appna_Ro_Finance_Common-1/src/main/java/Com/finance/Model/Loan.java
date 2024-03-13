@@ -1,9 +1,11 @@
 package Com.finance.Model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,10 +25,16 @@ public class Loan
 	// How Many Months above 12 
 	private int tenure;
 	
-	@OneToOne(targetEntity = Customer_Registration.class)
-	private Customer_Registration customer;
-	
-	
+	/*
+	 * @OneToOne
+	 * 
+	 * @JoinColumn(name = "customerId") private Customer_Registration
+	 * customerRegistration;
+	 */
+//	 @OneToOne(cascade = CascadeType.ALL)
+//	    @JoinColumn(name = "customerId", referencedColumnName = "customerId")
+//	    private Customer_Registration customerRegistration;
+//	
 
 
 }

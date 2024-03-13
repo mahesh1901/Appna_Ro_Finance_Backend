@@ -10,4 +10,6 @@ public interface Enquiry_ServiceI {
 
 	public List<Enquiry> getAllEnq();
 
+	public int checkCibil();
+
 }

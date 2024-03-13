@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,20 +12,18 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Document {
+public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int docId;
+	private int id;
 	
-	private byte passSizePhoto;
-	private byte signVerification;
-	private byte adharCard;
-	private byte panCard;
-	private byte bankStatement;
-	private byte  electrictyBill;
-	
-	@ManyToOne
-	private Customer_Registration  customer;
+	private byte  profileImg;
+	private String empName;
+	private String empEmail;
+	private String  empDesignation;
+	private String contactNo;
+	private String username;
+	private String password;
 
 }

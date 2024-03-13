@@ -1,6 +1,7 @@
 package Com.finance.ServiceImp;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,19 @@ public class Enquiry_ServiceImp implements Enquiry_ServiceI{
 	public List<Enquiry> getAllEnq()
 	{
 		return enq_Repo.findAll();
+	}
+
+	@Override
+	public int checkCibil() {
+		
+			int min= 550, max =950;
+			int CibilScore = ThreadLocalRandom.current().nextInt(min, max+1);
+			
+			
+				return CibilScore;
+			
+			
+		
 	}
 	
 	
