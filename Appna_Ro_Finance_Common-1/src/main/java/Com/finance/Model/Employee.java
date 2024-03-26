@@ -21,6 +21,7 @@ public class Employee {
 	private byte  profileImg;
 	private String empName;
 	private String empEmail;
+	//private String empRole;
 	private String  empDesignation;
 	private String contactNo;
 	private String username;

@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-
-import Com.finance.Model.Document;
+import Com.finance.Model.Documents;
 import Com.finance.Repositary.Document_Repo;
 import Com.finance.ServiceI.Document_ServiceI;
 
@@ -15,8 +14,8 @@ public class Document_ServiceImp  implements Document_ServiceI{
 	@Autowired  private Document_Repo  doc_Repo;
 
 	@Override
-	public Document saveDocData(MultipartFile passSizePhoto, MultipartFile signVerification, MultipartFile adharCard,
-			MultipartFile panCard, MultipartFile bankStatement, MultipartFile electrictyBill) 
+	public Documents saveDocData(MultipartFile passSizePhoto, MultipartFile signVerification, MultipartFile adharCard,
+			MultipartFile panCard, MultipartFile incomeStatement) 
 	{
 	 try {
          // Convert MultipartFile to byte array
@@ -24,17 +23,15 @@ public class Document_ServiceImp  implements Document_ServiceI{
          byte[] signVerificationBytes = signVerification.getBytes();
          byte[] adharCardBytes = adharCard.getBytes();
          byte[] panCardBytes = panCard.getBytes();
-         byte[] bankStatementBytes = bankStatement.getBytes();
-         byte[] electrictyBillBytes = electrictyBill.getBytes();
+         byte[] bankStatementBytes = incomeStatement.getBytes();
 
          // Create a Document object and set byte data
-         Document doc = new Document();
+         Documents doc = new Documents();
          doc.setPassSizePhoto(passSizePhotoBytes);
          doc.setSignVerification(signVerificationBytes);
          doc.setAdharCard(adharCardBytes);
          doc.setPanCard(panCardBytes);
-         doc.setBankStatement(bankStatementBytes);
-         doc.setElectrictyBill(electrictyBillBytes);
+         doc.setIncomeStatement(bankStatementBytes);
 
          // Save the document entity
          

@@ -1,5 +1,7 @@
 package Com.finance.Model;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,28 +12,25 @@ import lombok.NoArgsConstructor;
 
 
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class SanctionLetter {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    private String customerName;
-    private String address;
-    private String loanAmount;
-    private String loanType;
-    private String interestRate;
-    private String tenure;
-    private String startDate;
-    private String endDate;
-    private String sanctionDate;
-    private String referenceNumber;
-    private String bankName;
-    private String branchAddress;
-    private String contactNumber;
-   
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer sanctionId;
+	private Date sanctionDate;
+	private String applicantName;
+	private Double loanAmountSanctioned;
+	private String interestType;
+	private Double rateOfInterest;
+	private Integer loanTenure;
+	private Double monthlyEmiAmount;
+	private Double loanAmountWithInterest;
+	private String modeOfPayment;
+	private String sanctionLetterStatus;
+
 }
+

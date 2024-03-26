@@ -3,16 +3,25 @@ package Com.finance.ServiceI;
 import java.util.List;
 import java.util.Optional;
 
-import Com.finance.Model.Customer_Registration;
+import org.springframework.http.ResponseEntity;
+
+import Com.finance.Model.Customer;
+
 
 public interface Customer_ServiceI {
+	
+	public	Customer saveCustomer(Customer customer);
 
-	 public Customer_Registration saveCustomer(Customer_Registration csreg);
+	public List<Customer> getCustomer(String customerVerificationStatus);
 
-	public Optional<Customer_Registration> getSingleCustomer(int id);
+	public Optional<Customer> getOneCustomer(Integer customerId);
 
-	public Customer_Registration editCustomer(Customer_Registration cust, int id);
+	public Customer updateCustomer(Customer customerRead);
 
-	public List<Customer_Registration> findAllCust();
+	public Customer withoutDoc(Customer customer);
+
+	public Customer uploadCustomer(Integer customerId, Customer customer);
+
+
 
 }
