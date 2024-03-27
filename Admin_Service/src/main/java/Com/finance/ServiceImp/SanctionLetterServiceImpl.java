@@ -111,7 +111,7 @@ public class SanctionLetterServiceImpl implements SanctionLetterService{
 		cell.setPhrase(new Phrase("Loan Sanction id", font));
 		table.addCell(cell);
 //		cell.setPhrase(new Phrase(customer.getSanctionLetter().getSanctionId(), font1));
-		cell.setPhrase(new Phrase(customer.getSanctionLetter().getSanctionId()));
+		cell.setPhrase(new Phrase(String.valueOf(customer.getSanctionLetter().getSanctionId()), font1));
 
 		table.addCell(cell);
 		
@@ -180,8 +180,7 @@ public class SanctionLetterServiceImpl implements SanctionLetterService{
 			mimeMessageHelper.setSubject("Regarding Appna_RO_Finance family loan sanction letter");
 			mimeMessageHelper.setText("Dear Customer,We have received your loan application and are happy to let you know that it has been granted.Disbursement will take place 24 hours after you sign the necessary documents.Please review the attached forms for more details. If you have other inquiries or clarifications, feel free to call or drop by Appna_Ro_Finance office.");
 			
-//			ByteArrayResource bytearray=new ByteArrayResource(byt);
-//		 
+
 			byte[] bytearray=byt.readAllBytes();
 			mimeMessageHelper.addAttachment("SanctionLetter.pdf",new ByteArrayResource(bytearray));
 			
